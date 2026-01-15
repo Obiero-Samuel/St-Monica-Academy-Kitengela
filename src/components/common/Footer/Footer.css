@@ -1,0 +1,12 @@
+.main-footer {
+    width: 100%;
+    padding: 1rem 0;
+    background: var(--secondary-gradient);
+    color: #fff;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}

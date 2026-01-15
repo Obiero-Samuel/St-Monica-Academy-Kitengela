@@ -1,0 +1,17 @@
+.animated-btn {
+    background: var(--interactive-blue);
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background var(--transition-fast), box-shadow var(--transition-fast);
+    outline: none;
+}
+
+.animated-btn:hover {
+    background: var(--interactive-purple);
+}

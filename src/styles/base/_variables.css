@@ -1,0 +1,30 @@
+/* CSS Variables placeholder */
+:root {
+    /* Color Palette */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+
+    /* Interactive Colors */
+    --interactive-blue: #3b82f6;
+    --interactive-purple: #8b5cf6;
+    --interactive-pink: #ec4899;
+
+    /* Animation Speeds */
+    --transition-fast: 150ms;
+    --transition-medium: 300ms;
+    --transition-slow: 500ms;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.dark-mode {
+    --bg-primary: #0f172a;
+    --text-primary: #f8fafc;
+    --glass-bg: rgba(30, 41, 59, 0.3);
+}

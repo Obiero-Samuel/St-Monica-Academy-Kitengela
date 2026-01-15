@@ -1,0 +1,23 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #e0e7ef 0%, #a7c7e7 100%);
+    position: relative;
+    transition: background 0.5s cubic-bezier(.4, 0, .2, 1);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/images/lv_0_20260115112932.jpg') center/cover no-repeat;
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@import '../styles/_variables.css';
+@import '../styles/components/_cards.css';
+/* Main stylesheet placeholder */
