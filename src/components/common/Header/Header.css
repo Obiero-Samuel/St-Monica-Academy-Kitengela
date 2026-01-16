@@ -25,11 +25,31 @@
 }
 
 .main-header nav a {
-    color: #fff;
+    color: #1a2233;
     margin-left: 1.5rem;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    letter-spacing: 0.5px;
     transition: color var(--transition-medium);
+}
+
+body.dark-mode .main-header {
+    background: rgba(30, 34, 54, 0.98);
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.45);
+}
+
+body.dark-mode .main-header nav a {
+    color: #fbbf24;
+    text-shadow: 0 2px 8px #3b82f6, 0 1px 0 #222;
+}
+
+body.dark-mode .main-header nav a:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 8px;
+    padding: 0.2em 0.7em;
+    text-shadow: 0 2px 12px #8b5cf6;
 }
 
 .main-header nav a:hover {

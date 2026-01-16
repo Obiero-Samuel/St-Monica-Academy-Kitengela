@@ -35,7 +35,7 @@ function App() {
     return (
         <Router>
             <ErrorBoundary>
-                <Layout>
+                <Layout theme={darkMode ? 'dark' : 'light'} toggleTheme={() => setDarkMode((d) => !d)}>
                     <button
                         style={{
                             position: 'fixed',

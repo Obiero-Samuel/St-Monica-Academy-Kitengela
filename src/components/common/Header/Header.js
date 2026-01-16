@@ -1,20 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
-    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
-
-    useEffect(() => {
-        document.body.classList.toggle('dark-mode', theme === 'dark');
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
+const Header = ({ theme, toggleTheme }) => {
     return (
         <header className="main-header" role="banner">
-            <div className="logo" aria-label="Site Logo">
-                <span role="img" aria-label="graduation cap" style={{ marginRight: '0.5rem', fontSize: '2.2rem', filter: 'drop-shadow(0 2px 6px #3b82f6)' }}>🎓</span>
-                St Monica Academy Kitengela
+            <div className="logo" aria-label="Site Logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <span style={{ display: 'flex', alignItems: 'center' }}>
+                    <span role="img" aria-label="graduation cap" style={{ marginRight: '0.5rem', fontSize: '2.2rem', filter: 'drop-shadow(0 2px 6px #3b82f6)' }}>🎓</span>
+                    St Monica Academy Kitengela
+                </span>
+                <span className="motto" style={{
+                    fontSize: '1.05rem',
+                    fontWeight: 500,
+                    fontFamily: 'Segoe Script, Brush Script MT, cursive',
+                    color: '#fbbf24',
+                    letterSpacing: '1.5px',
+                    marginTop: '-0.2rem',
+                    textShadow: '0 1px 8px #3b82f6, 0 1px 0 #222',
+                    background: 'linear-gradient(90deg, #fbbf24 0%, #3b82f6 60%, #8b5cf6 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                }}>
+                    Shrine of Knowledge
+                </span>
             </div>
             <nav aria-label="Main navigation">
                 <Link to="/">Home</Link>
@@ -34,7 +44,7 @@ const Header = () => {
                 <Link to="/profile">Profile</Link>
             </nav>
             <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                onClick={toggleTheme}
                 aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                 style={{
                     marginLeft: 20,

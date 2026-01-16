@@ -4,9 +4,9 @@ import Footer from '../common/Footer/Footer';
 import GlobalToast from '../common/GlobalToast/GlobalToast';
 import './Layout.css';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, theme, toggleTheme }) => (
     <div className="main-layout">
-        <Header />
+        <Header theme={theme} toggleTheme={toggleTheme} />
         <GlobalToast />
         <main className="main-content">{children}</main>
         <Footer />

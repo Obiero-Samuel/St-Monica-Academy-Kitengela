@@ -7,6 +7,6 @@
 .main-content {
     flex: 1 0 auto;
     padding: 2rem 1rem 4rem 1rem;
-    background: var(--bg-primary, #fff);
-    transition: background var(--transition-medium);
+    background: var(--color-bg);
+    transition: background var(--transition-medium, 0.3s);
 }
