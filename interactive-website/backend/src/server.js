@@ -15,11 +15,14 @@ setInterval(() => {
     chartData = chartData.map(d => ({ ...d, value: Math.max(1, d.value + Math.floor(Math.random() * 5 - 2)) }));
     io.emit('chart:update', chartData);
 }, 2000);
+
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const { Server } = require('socket.io');
+const sequelize = require('./config/database');
+const Parent = require('../../models/Parent');
 
 dotenv.config();
 const app = express();
@@ -67,7 +70,11 @@ app.get('/', (req, res) => {
     res.send('Interactive Website Backend Running');
 });
 
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+
+// Sync Sequelize models (ensure Parent table exists)
+sequelize.sync().then(() => {
+    const PORT = process.env.PORT || 5000;
+    server.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
 });
